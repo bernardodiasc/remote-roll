@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@dev/*": ["./dev/*"],
+      "@app/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"],
+      "@theme/*": ["./src/theme/*"],
+      "@utils/*": ["./src/utils/*"],
+    },
+    "types": ["node", "jest", "@testing-library/jest-dom"]
+  },
+  "include": ["./global-types.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/**/*.ts", ".next/types/**/*.ts", "next.config.js", "package.json", ".eslintrc.js", ".storybook/main.ts", ".storybook/preview.ts", "jest.config.ts"],
+  "exclude": [
+    "lib",
+    "node_modules",
+    "./dev/generator/templates/**/*"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "esnext"
+    },
+    "moduleTypes": {
+      "chalk/**/*": "mjs"
+    }
+  },
+}

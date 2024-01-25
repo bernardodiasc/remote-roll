@@ -1,0 +1,76 @@
+@value colors: "@theme/colors.module.css";
+@value alpha_Neutral_8_20 from colors;
+
+/* Animations */
+
+.animation_fadeIn_5_linear {
+  animation: keyframe_fadeIn 5s linear;
+}
+
+.animation_fadeIn_1_linear {
+  animation: keyframe_fadeIn 1s linear;
+}
+
+.animation_fadeIn_05_linear {
+  animation: keyframe_fadeIn 0.5s linear;
+}
+
+.animation_fadeIn_005_linear {
+  animation: keyframe_fadeIn 0.05s linear;
+}
+
+.animation_fadeIn_1_easeInOut {
+  animation: keyframe_fadeIn 1s ease-in-out;
+}
+
+.animation_fadeIn_1_easeIn {
+  animation: keyframe_fadeIn 1s ease-in;
+}
+
+.animation_fadeIn_03_easeIn {
+  animation: keyframe_fadeIn 0.3s ease-in;
+}
+
+.animation_fadeIn_1_easeOut {
+  animation: keyframe_fadeIn 1s ease-out;
+}
+
+.animation_gradient_2_ease_infinite {
+  animation: keyframe_gradient 2s ease infinite;
+}
+
+.animation_blur_012_easeIn {
+  animation: keyframe_blur 0.12s ease-in;
+}
+
+@keyframes keyframe_blur {
+  from {
+    filter: none;
+    opacity: 1;
+  }
+  to {
+    filter: drop-shadow(12px 12px 80px alpha_Neutral_8_20);
+    opacity: 0.6;
+  }
+}
+
+@keyframes keyframe_fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes keyframe_gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,32 @@
+version: 0.2
+env:
+  shell: bash
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - wget https://github.com/Droplr/aws-env/raw/master/bin/aws-env-linux-amd64 -O aws-env
+      - chmod +x aws-env
+      - npm update -g npm
+      - npm install -g yarn
+      - node -v
+      - yarn -v
+
+  build:
+    commands:
+      - echo Installing NPM dependencies...
+      - eval $(./aws-env --recursive)
+      - yarn install --frozen-lockfile --prefer-offline --cache-folder .yarn-cache
+      - echo Build started on `date`
+      - yarn build
+
+  post_build:
+    commands:
+      - aws s3 sync --delete ./out "s3://$FRONTEND_BUCKET/"
+
+cache:
+  paths:
+    - './node_modules/**/*'
+    - './.yarn-cache/**/*'

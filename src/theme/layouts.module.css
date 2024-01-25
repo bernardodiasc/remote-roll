@@ -1,0 +1,42 @@
+@value breakpoints: "@theme/breakpoints.module.css";
+@value breakpointXS from breakpoints;
+@value breakpointSM from breakpoints;
+
+/**
+ * Layout styles
+ *
+ * Import values on other CSS components using:
+ *
+ * @value layouts: "@theme/layouts.module.css";
+ * @value oneColumnLayout from layouts;
+ * @value ONECOLUMNLAYOUT_HEADER_HEIGHT from layouts;
+ */
+
+@value ONECOLUMNLAYOUT_HEADER_HEIGHT: 82px;
+@value ONECOLUMNLAYOUT_SMALLER_PADDING: 16px;
+@value ONECOLUMNLAYOUT_MOBILE_PADDING: 24px;
+@value ONECOLUMNLAYOUT_DESKTOP_PADDING: 40px;
+@value ONECOLUMNLAYOUT_MOBILE_MAXWIDTH: 100%;
+@value ONECOLUMNLAYOUT_DESKTOP_MAXWIDTH: 1512px;
+
+.oneColumnLayout {
+  padding-right: ONECOLUMNLAYOUT_SMALLER_PADDING;
+  padding-left: ONECOLUMNLAYOUT_SMALLER_PADDING;
+  max-width: ONECOLUMNLAYOUT_MOBILE_MAXWIDTH;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: breakpointXS) {
+  .oneColumnLayout {
+    padding-right: ONECOLUMNLAYOUT_MOBILE_PADDING;
+    padding-left: ONECOLUMNLAYOUT_MOBILE_PADDING;
+    max-width: ONECOLUMNLAYOUT_DESKTOP_MAXWIDTH;
+  }
+}
+
+@media screen and (min-width: breakpointSM) {
+  .oneColumnLayout {
+    padding-right: ONECOLUMNLAYOUT_DESKTOP_PADDING;
+    padding-left: ONECOLUMNLAYOUT_DESKTOP_PADDING;
+  }
+}

@@ -1,0 +1,27 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  /**
+   * The .undefined class-name occurs when CSS-Modules can't find the related class-name in the module.
+   * This is a silent bug that many times can be seen with the UI crashing.
+   * But there are ocasions in which can represent more deeper failures in the CSS usage and not necessarily easily visible.
+   * Adding style to the .undefined class-name makes easier to spot this bug on stories pages.
+   * Unfortunatelly Jest can't test this easily (e.g. using expect(component.getElementsByClassName('undefined')).toHaveLength(0))
+   * because the render just translate the class-names string without any CSS-Modules processing.
+   */
+  .undefined {
+    position: relative;
+    border: 1px solid red !important;
+  }
+  .undefined::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    content: 'undefined';
+    padding: 2px 3px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+</style>

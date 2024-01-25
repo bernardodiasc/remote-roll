@@ -1,0 +1,6 @@
+@value typography: "@theme/typography.module.css";
+@value typeface_base from typography;
+
+.component {
+  composes: typeface_base;
+}

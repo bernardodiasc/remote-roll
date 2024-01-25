@@ -1,0 +1,37 @@
+/* Breakpoints */
+
+/*
+  Mobile-first pattern
+  ====================
+  Use only "min-width" for media queries!
+  The breakpoint values are made for the exact viewport width and above.
+  The styles on a media query should override the defaults and smaller breakpoints.
+
+  See example:
+*/
+
+/*
+@value breakpoints: '@theme/breakpoints.module.css';
+@value breakpointSM from breakpoints;
+@value breakpointMD from breakpoints;
+
+.component {}
+.element {}
+
+@media screen and (min-width: breakpointSM) {
+  .component {}
+  .element {}
+}
+
+@media screen and (min-width: breakpointMD) {
+  .component {}
+  .element {}
+}
+*/
+
+@value breakpointXS: 480px;
+@value breakpointSM: 768px;
+@value breakpointMD: 1024px;
+@value breakpointLG: 1280px;
+@value breakpointXL: 1440px;
+@value breakpointXXL: 2048px;

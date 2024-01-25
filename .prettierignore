@@ -1,0 +1,10 @@
+node_modules
+package.json
+package-lock.json
+.cache
+.next
+.husky
+coverage
+.prettierignore
+.stylelintignore
+.eslintignore

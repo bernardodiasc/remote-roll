@@ -1,0 +1,25 @@
+@value breakpoints: "./breakpoints.module.css";
+@value breakpointSM from breakpoints;
+
+/* Typefaces */
+
+.typeface_base {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  letter-spacing: -0.04em;
+  line-height: 1.67;
+}
+
+@media screen and (min-width: breakpointSM) {
+  .typeface_base {
+    letter-spacing: -0.02em;
+    line-height: 1.14;
+  }
+}
+
+/* Sizes and weights */
+
+.fs100_fw900 {
+  font-size: 100px;
+  font-weight: 900;
+}
