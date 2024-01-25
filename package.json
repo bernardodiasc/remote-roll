@@ -11,7 +11,7 @@
     "lint-fix": "eslint .eslintrc.js next.config.js package.json jest.config.ts \"src/**/*.{js,jsx,ts,tsx,json}\" --no-ignore --fix --format=pretty",
     "format": "prettier --write .eslintrc.js next.config.js package.json jest.config.ts \"src/**/*.{js,jsx,ts,tsx,json,css}\" && npm run lint-fix",
     "type-check": "tsc --pretty --noEmit",
-    "deploy": "rimraf out && mkdir out && touch out/.nojekyll && storybook build -o ./out && gh-pages -d out -t true",
+    "deploy": "rimraf out && mkdir out && APP_ENV=ghpages next build && touch out/.nojekyll && npm run build-docs && gh-pages -d out -t true",
     "docs": "storybook dev -p 6008",
     "build-docs": "storybook build -o ./out/docs",
     "gen": "ts-node ./dev/generator/index.ts",
