@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Welcome To Remote Roll',
   description:
-    'X-Team provides on-demand content production Teams..',
+    'Remote Roll provides on-demand content production Teams..',
 }
 
 export default function Home () {
@@ -33,6 +33,12 @@ export default function Home () {
 
       <h3>Content opportunities:</h3>
       <p>Move past the ordinary with the transformative power of video. When seamlessly integrated with the sales team, content production becomes a dynamic duo, driving  sales growth.</p>
+
+      <hr/>
+
+      <iframe src="https://www.behance.net/embed/project/188357593?ilo0=1" height="316" width="404" allowFullScreen lazyLoad frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe src="https://www.behance.net/embed/project/187079199?ilo0=1" height="316" width="404" allowFullScreen lazyLoad frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe src="https://www.behance.net/embed/project/148810415?ilo0=1" height="316" width="404" allowFullScreen lazyLoad frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   )
 }
