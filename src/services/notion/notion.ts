@@ -16,3 +16,21 @@ export const getNotionDataBase = async (database_id: string) => {
     return ''
   }
 }
+
+export const getNotionPage = async (page_id: string) => {
+  try {
+    const notion = new Client({
+      auth: NOTION_TOKEN,
+    })
+    const page = await notion.pages.retrieve({ page_id })
+    const block = await notion.blocks.retrieve({ block_id: page.id })
+    const response = await notion.blocks.children.list({
+      block_id: block.id,
+      page_size: 50,
+    })
+    return response
+  } catch (error) {
+    console.error(error)
+    return ''
+  }
+}

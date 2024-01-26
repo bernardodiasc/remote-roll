@@ -5,8 +5,8 @@ import Head from 'next/head'
 import { useNotionDataBaseContext } from '@hooks/useNotionDataBaseContext'
 
 export default function Home () {
-  const notionDataBase = useNotionDataBaseContext()
-  console.log({notionDataBase})
+  const data = useNotionDataBaseContext()
+  console.log(data);
   return (
     <div>
       <Head>
