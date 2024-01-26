@@ -1,14 +1,19 @@
-import type { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Welcome To Remote Roll',
-  description:
-    'Remote Roll provides on-demand content production Teams..',
-}
+import Head from 'next/head'
+
+import { useNotionDataBaseContext } from '@hooks/useNotionDataBaseContext'
 
 export default function Home () {
+  const notionDataBase = useNotionDataBaseContext()
+  console.log(notionDataBase)
   return (
     <div>
+      <Head>
+        <title>Welcome To Remote Roll</title>
+        <meta name="description" content="Remote Roll provides on-demand content production teams" />
+      </Head>
+
       <h1>REMOTE ROLL WEBSITE</h1>
 
       <h2>On-Demand content production Teams.</h2>
@@ -36,9 +41,9 @@ export default function Home () {
 
       <hr/>
 
-      <iframe src="https://www.behance.net/embed/project/188357593?ilo0=1" height="316" width="404" allowFullScreen lazyLoad frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
-      <iframe src="https://www.behance.net/embed/project/187079199?ilo0=1" height="316" width="404" allowFullScreen lazyLoad frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
-      <iframe src="https://www.behance.net/embed/project/148810415?ilo0=1" height="316" width="404" allowFullScreen lazyLoad frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe src="https://www.behance.net/embed/project/188357593?ilo0=1" height="316" width="404" allowFullScreen frameBorder="0" allow="clipboard-write" referrerPolicy="strict-origin-when-cross-origin" />
+      <iframe src="https://www.behance.net/embed/project/187079199?ilo0=1" height="316" width="404" allowFullScreen frameBorder="0" allow="clipboard-write" referrerPolicy="strict-origin-when-cross-origin" />
+      <iframe src="https://www.behance.net/embed/project/148810415?ilo0=1" height="316" width="404" allowFullScreen frameBorder="0" allow="clipboard-write" referrerPolicy="strict-origin-when-cross-origin" />
     </div>
   )
 }
