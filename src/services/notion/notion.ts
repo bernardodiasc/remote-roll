@@ -1,8 +1,10 @@
 import { Client } from '@notionhq/client'
 
+import type { IGetNotionDataBase, IGetNotionPage } from './notion.types'
+
 const NOTION_TOKEN = process.env.NEXT_PUBLIC_NOTION_TOKEN || ''
 
-export const getNotionDataBase = async (database_id: string) => {
+export const getNotionDataBase: IGetNotionDataBase = async database_id => {
   try {
     const notion = new Client({
       auth: NOTION_TOKEN,
@@ -17,7 +19,7 @@ export const getNotionDataBase = async (database_id: string) => {
   }
 }
 
-export const getNotionPage = async (page_id: string) => {
+export const getNotionPage: IGetNotionPage = async page_id => {
   try {
     const notion = new Client({
       auth: NOTION_TOKEN,
