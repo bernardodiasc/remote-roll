@@ -6,7 +6,7 @@ import { useNotionDataBaseContext } from '@hooks/useNotionDataBaseContext'
 
 export default function Home () {
   const notionDataBase = useNotionDataBaseContext()
-  console.log(notionDataBase)
+  console.log({notionDataBase})
   return (
     <div>
       <Head>

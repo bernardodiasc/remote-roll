@@ -1,7 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getNotionDataBase } from '@services/notion'
-
 import NotionDataBaseContext from './NotionDataBaseContext'
 
 import type { FunctionComponent, PropsWithChildren } from 'react'
@@ -14,11 +12,11 @@ const NotionDataBaseProvider: FunctionComponent<PropsWithChildren> = ({
     isLoading,
   } = useQuery({
     queryKey: ['notion'],
-    queryFn: () => getNotionDataBase(),
+    queryFn: () => fetch('/api/movies').then(res => res.json()),
   })
   return (
     <NotionDataBaseContext.Provider value={{
-      data,
+      data: data?.data,
       isLoading,
     }}>
       {children}
