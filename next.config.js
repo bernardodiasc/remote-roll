@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const isGHPages = process.env.APP_ENV === 'ghpages'
-const githubUrl = 'https://x-team.github.io'
-const siteBasePath = 'x-team-2023'
+const githubUrl = 'https://bernardodiasc.github.io'
+const siteBasePath = 'remote-roll'
 const assetPrefix = isGHPages ? `${githubUrl}/${siteBasePath}` : undefined
 const basePath = isGHPages ? `/${siteBasePath}` : undefined
 
