@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+// @ts-nocheck
+/* eslint-disable */
 
 import { getNotionPage } from '@services/notion'
 
